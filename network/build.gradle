@@ -1,43 +1,15 @@
-plugins {
-    id 'com.android.library'
-    id 'kotlin-android'
-}
-
-android {
-    compileSdk 33
-    buildToolsVersion "33.0.2"
-
-    defaultConfig {
-        minSdk 21
-        targetSdk 33
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-}
+apply plugin : 'com.android.library'
+apply plugin: 'kotlin-android'
+apply from : '../common.gradle'
 
 dependencies {
+    // // 基础库（不包任何第三方框架）
+    // implementation project(':library:base')
 
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.3.0'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    // OkHttp 框架：https://github.com/square/okhttp
+    compileOnly 'com.squareup.okhttp3:okhttp:4.9.1'
+    // Android网络请求库：https://github.com/square/retrofit
+    compileOnly 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation "androidx.core:core-ktx:1.3.2"
+
 }

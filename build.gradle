@@ -5,7 +5,7 @@ buildscript {
     // 导入通用的 Maven 库配置
     apply from : 'maven.gradle'
 
-    ext.kotlin_version = "1.8.0"
+    ext.kotlin_version = "1.6.10"
     ext.agcp_version  = "1.6.0.300"
     ext.hilt_version = "2.45"
     repositories {
