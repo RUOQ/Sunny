@@ -6,9 +6,3 @@ dependencyResolutionManagement {
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin' }
     }
 }
-rootProject.name = "sunny"
-include ':app'
-include ':library'
-include ':base'
-include ':network'
-include ':widget'
